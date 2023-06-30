@@ -1,12 +1,12 @@
 #! usr/bin/env python3
 """
-Pulls all the major sections from a Brightspace Quiz export file and organizes
-it into an Brightspace Grades import file.
+Pulls all the major sections from a Brightspace Quiz export file and
+organizes it into an Brightspace Grades import file.
 
 Instructions:
 Place the exported quiz file in the same folder
-Adjust the SECTIONS and parallel GRADES_SUFFIX to how you've formatted the
-Quiz sections and Brightspace Grade items
+Adjust the SECTIONS and parallel GRADES_SUFFIX to how you've formatted
+the Quiz sections and Brightspace Grade items
 """
 
 from os import listdir
