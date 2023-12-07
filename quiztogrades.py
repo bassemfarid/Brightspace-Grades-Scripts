@@ -14,20 +14,28 @@ from os import listdir
 import pandas as pd
 
 # The sections on your quiz to export to grades
-SECTIONS = ["Knowledge & Understanding",
-            "Thinking & Inquiry", "Communication", "Application"]
+SECTIONS = [
+    "Knowledge & Understanding",
+    "Thinking & Inquiry",
+    "Communication",
+    "Application",
+]
 
 # What the suffix of the quiz grade item should be;
 # Must end in " Points Grade" and be parallel to SECTIONS
-GRADES_SUFFIX = [" [KU] Points Grade", " [TI] Points Grade",
-                 " [C] Points Grade", " [A] Points Grade"]
+GRADES_SUFFIX = [
+    " [KU] Points Grade",
+    " [TI] Points Grade",
+    " [C] Points Grade",
+    " [A] Points Grade",
+]
 
 
 QUIZ_FILE = [dir for dir in listdir() if " - Attempt Details.xlsx" in dir][0]
 QUIZ_NAME = QUIZ_FILE[: QUIZ_FILE.index(" - Attempt Details")]
 quiz = pd.read_excel(QUIZ_NAME + " - Attempt Details.xlsx")
 quiz = quiz[quiz["Bonus?"].isin(SECTIONS)]
-quiz = quiz.iloc[:, [1, -8, -2]]
+quiz = quiz.iloc[:, [1, 12, 18]]
 
 quiz_import = {"Username": []}
 for suffix in GRADES_SUFFIX:
